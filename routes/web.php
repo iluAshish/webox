@@ -17,6 +17,7 @@ use App\Http\Controllers\app\MediaController;
 use App\Http\Controllers\app\EnquiryController;
  use App\Http\Controllers\app\GroupCompaniesController;
 use App\Http\Controllers\app\DhabiProductController;
+use App\Http\Controllers\app\SizeController;
 use App\Http\Controllers\web\HomeController as WebHome;
 use App\Models\SiteInformation;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,7 @@ Route::post('product-load-more', [WebHome::class, 'singleCategoryProductLoadMore
 Route::get('contact-us', [WebHome::class, 'contact_us']);
 Route::get('testimonials', [WebHome::class, 'testimonials']);
 Route::post('testimonial-load-more', [WebHome::class, 'testimonialLoadMore']);
+
 Route::get('sizes', [WebHome::class, 'sizes']);
 Route::get('size/{short_url}', [WebHome::class, 'size_detail']); // detail page
 
@@ -285,6 +287,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         });
 
 
+    });
+
+    /********************** Size start *******************************************/
+    Route::group(['prefix' => 'size'], function () {
+
+        Route::get('/', [SizeController::class, 'size']);
+        Route::get('create/', [SizeController::class, 'size_create']);
+        Route::post('create/', [SizeController::class, 'size_store']);
+        Route::get('edit/{id}', [SizeController::class, 'size_edit']);
+        Route::post('edit/{id}', [SizeController::class, 'size_update']);
+        Route::get('view/{id}', [SizeController::class, 'size_view']);
+        Route::post('delete/', [SizeController::class, 'size_delete']);
     });
 
 

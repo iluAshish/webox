@@ -253,17 +253,19 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                            <li class="nav-item drop-down">
+                                <!-- here we put the size  -->
+                                <li class="nav-item drop-down">
                                     <a class="nav-link" href="{{ url('sizes') }}">
                                         Sizes
                                     </a>
                                     <ul>
-                                        @foreach ($menu as $service_item)
-                                        <li><a href="{{ url('/') }}/size/{!! $service_item->short_url !!}">{!! $service_item->title !!}</a></li>
+                                        @foreach ($sizes as $size_item)
+                                        <li><a href="{{ url('/') }}/size/{!! $size_item->short_url !!}">{!! $size_item->title !!}</a></li>
                                         @endforeach
 
                                     </ul>
                                 </li>
+                                <!-- here we put the size  -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('blogs') }}">Blog</a>
                                 </li>

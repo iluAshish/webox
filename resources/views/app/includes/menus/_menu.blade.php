@@ -151,6 +151,22 @@
 {{--        </li>--}}
     </ul>
 </li>
+<li class="nav-item {{ (Request::segment(2)=='size')?'menu-is-opening menu-open':'' }}">
+    <a href="#" class="nav-link {{ (Request::segment(2)=='size')?'active':'' }}">
+        <i class="nav-icon fas fa-envelope"></i>
+        <p>Sizes
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview" style="display: {{ (Request::segment(2)=='size')?'block':'none' }}">
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'size')}}" class="nav-link {{ (Request::segment(2)=='size' && Request::segment(3)=='')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>sizes</p>
+            </a>
+        </li>
+    </ul>
+</li>
 <li class="nav-item {{ (Request::segment(2)=='containers')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='containers')?'active':'' }}">
         <i class="nav-icon fab fa-blogger-b"></i>

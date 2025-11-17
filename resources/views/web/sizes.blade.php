@@ -43,7 +43,7 @@
                         </li>
                         <li class="list-inline-item">/</li>
                         <li class="list-inline-item">
-                            <a href="{{url('services')}}" class="active text-decoration-none">Services</a>
+                            <a href="{{url('sizes')}}" class="active text-decoration-none">Sizes</a>
                         </li>
                     </ul>
                 </div>
@@ -58,15 +58,15 @@
             <div class="row align-items-end text-center">
                 <div class="col-12">
                     <p class="small-title">
-                        OUR SERVICES
+                        OUR SIZES
                     </p>
-                    <h1 class="big-title">OUR SERVICES</h1>
+                    <h1 class="big-title">OUR SIZES</h1>
                 </div>
             </div>
         </div>
         <div class="container-ctn service-list">
             <div class="row">
-                @foreach ($services as $service)
+                @foreach ($sizes as $service)
                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
                         <a href="{{ url('/') }}/size/{!! $service->short_url !!}">
                             <div class="service-box">
@@ -105,10 +105,10 @@
                     </div>
                 @endforeach
                 <div class="appendHere_{{ $offset }}"></div>
-                <input type="hidden" id="totalBlog" name="total_blog" value="{{ $totalServices }}">
+                <input type="hidden" id="totalBlog" name="total_blog" value="{{ $totalSize }}">
                 <input type="hidden" id="blog_loading_offset" name="blog_loading_offset" value="{{ $offset }}">
                 <input type="hidden" id="blog_loading_limit" name="blog_loading_limit" value="{{ $loading_limit }}">
-                @if ($totalServices > $offset)
+                @if ($totalSize > $offset)
                     <div class="row py-3 more-section-{{ $offset }}">
                         <div class="col-12 d-flex justify-content-center">
                             <div class="primaryBtn load-more-services-button" id="btnposition">

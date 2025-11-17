@@ -27,6 +27,7 @@ use App\Models\Banner;
 use App\Models\HomeVideoBanner;
 use App\Models\PortfolioGallery;
 use App\Models\Location;
+use App\Models\Size;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -50,6 +51,7 @@ class HomeController extends Controller
         $locationList = Location::active()->orderBy('sort_order')->get();
         $portfolio_menu = Portfolio::where('status','Active')->orderBy('sort_order')->get();
         $categories_menu=Category::where('status','Active')->whereNull('parent_id')->orderBy('sort_order')->get();
+        $sizes = Size::where('status','Active')->whereNull('parent_id')->orderBy('sort_order')->get();
         return View::share(compact(
             'siteInformation',
             'menu',
@@ -62,7 +64,8 @@ class HomeController extends Controller
             'categories_menu',
             'testimonialCount',
             'services_list',
-            'abut_us_data'
+            'abut_us_data',
+            'sizes'
         ));
     }
 
@@ -373,33 +376,33 @@ class HomeController extends Controller
     }
     
     public function sizes()
-{
-    $meta_data = $this->seo_content(1, 'Services'); 
-    $banner = Banner::type('Services')->first();    
+    {
+        $meta_data = $this->seo_content(1, 'Services'); 
+        $banner = Banner::type('Services')->first();    
 
-    $condition = Service::where('status','Active')
-        ->whereNull('parent_id')
-        ->orderBy('sort_order')
-        ->get();
+        $condition = Size::where('status','Active')
+            ->whereNull('parent_id')
+            ->orderBy('sort_order')
+            ->get();
 
-    $totalServices = $condition->count();
-    $services = $condition->take(4);
-    $offset = $services->count();
-    $loading_limit = 4;
+        $totalSize = $condition->count();
+        $sizes = $condition->take(4);
+        $offset = $sizes->count();
+        $loading_limit = 4;
 
-    // if your view is sizes.blade.php use 'web.sizes'
-    return view('web.sizes', compact(
-        'meta_data',
-        'totalServices',
-        'banner',
-        'offset',
-        'loading_limit',
-        'services'
-    ));
-}
+        // if your view is sizes.blade.php use 'web.sizes'
+        return view('web.sizes', compact(
+            'meta_data',
+            'totalSize',
+            'banner',
+            'offset',
+            'loading_limit',
+            'sizes'
+        ));
+    }
 
-         public function serviceLoadMore(Request $request)
-     {
+    public function serviceLoadMore(Request $request)
+    {
          $offset = $request->offset;
          $loading_limit = $request->loading_limit;
          $condition = Service::where('status','Active')->whereNull('parent_id')->orderBy('sort_order');
@@ -408,10 +411,10 @@ class HomeController extends Controller
          $offset += $services->count();
 
          return view('web.includes.services_list', compact( 'loading_limit', 'totalServices', 'offset', 'services'));
-     }
+    }
 
-         public function containerLoadMore(Request $request)
-     {
+    public function containerLoadMore(Request $request)
+    {
     //   dd($request->all());
         $offset = $request->offset;
         $limit = $request->limit;
@@ -461,46 +464,43 @@ class HomeController extends Controller
             return view('web.error.404');
         }
     }
-
-
-
     
     public function size_detail($short_url)
-{
-    $id = "1";
-    $service_details = Service::active()->where('short_url', $short_url)->first();
+    {
+        $id = "1";
+        $service_details = Size::active()->where('short_url', $short_url)->first();
 
-    if ($service_details) {
-        $meta_data = $this->seo_content(0, 'Service', $service_details->id);
-        $other_services = Service::where('short_url', '!=', $short_url)
-            ->whereNull('parent_id')
-            ->active()
-            ->get();
-
-        $service = Service::active()->where('short_url', $short_url)->first();
-        $subServices = collect(); // default empty
-
-        if ($service) {
-            $subServices = Service::where('parent_id', $service_details->id)
-                ->where('id', '!=', $service->id)
+        if ($service_details) {
+            $meta_data = $this->seo_content(0, 'Service', $service_details->id);
+            $other_services = Size::where('short_url', '!=', $short_url)
+                ->whereNull('parent_id')
                 ->active()
                 ->get();
+
+            $service = Size::active()->where('short_url', $short_url)->first();
+            $subServices = collect(); // default empty
+
+            if ($service) {
+                $subServices = Size::where('parent_id', $service_details->id)
+                    ->where('id', '!=', $service->id)
+                    ->active()
+                    ->get();
+            }
+
+            $service_banner = Banner::type('Services')->first();
+
+            return view('web.size_detail', compact(
+                'meta_data',
+                'service_details',
+                'other_services',
+                'subServices',
+                'service_banner',
+                'id'
+            ));
+        } else {
+            return view('web.error.404');
         }
-
-        $service_banner = Banner::type('Services')->first();
-
-        return view('web.size_detail', compact(
-            'meta_data',
-            'service_details',
-            'other_services',
-            'subServices',
-            'service_banner',
-            'id'
-        ));
-    } else {
-        return view('web.error.404');
     }
-}
 
 
     public function terms_and_conditions()
