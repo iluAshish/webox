@@ -1,0 +1,12 @@
+[17-Nov-2025 09:39:01 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 558
+[17-Nov-2025 09:39:02 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 558
+[17-Nov-2025 09:39:48 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 558
+[17-Nov-2025 09:39:50 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 558
+[17-Nov-2025 09:40:28 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 543
+[17-Nov-2025 09:40:30 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 543
+[17-Nov-2025 09:40:40 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 543
+[17-Nov-2025 09:40:41 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 543
+[17-Nov-2025 09:41:09 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 539
+[17-Nov-2025 09:41:10 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 539
+[17-Nov-2025 09:42:00 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 539
+[17-Nov-2025 09:42:01 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\web\HomeController::sizes() in /home1/yulyeite/public_html/app/Http/Controllers/web/HomeController.php on line 539

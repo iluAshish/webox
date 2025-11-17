@@ -1,0 +1,28 @@
+
+//base 
+@import "../scss/helpers/variables";
+@import "../scss/helpers/media-queries";
+@import "../scss/helpers/mixins";
+@import "../scss/base/headings";
+@import "../scss/base/buttons";
+//end of base 
+// Helpers
+// @import "../scss/layout/reset";
+@import "../scss/helpers/font-kit";
+// Default HTML & Body Settings
+
+
+// Project Styles
+
+@import "../scss/pages/style.scss";
+@import "../scss/pages/header.scss";
+@import "../scss/pages/footer.scss";
+@import "../scss/pages/home.scss";
+@import "../scss/pages/blogs.scss";
+@import "../scss/pages/contact.scss";
+@import "../scss/pages/about.scss";
+@import "../scss/pages/portfolio.scss";
+@import "../scss/pages/containerlist.scss";
+@import "../scss/pages/common.scss";
+@import "../scss/pages/modal.scss";
+

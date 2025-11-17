@@ -1,0 +1,267 @@
+.containerlist-wrapper{
+    .small-title{
+     text-align: center;
+    }
+    .tagline{
+      width: 70%;
+      display: block;
+      margin: 40px auto;
+      @media(max-width:1600px){
+        margin: 30px auto;
+      }
+      @media(max-width:1200px){
+        width: 80%;
+      }
+      @media(max-width:992px){
+        width: 90%;
+        margin: 30px auto;
+      }
+      @media(max-width:900px){
+        width: 100%;
+        margin: 20px auto;
+      }
+    }
+    .con-title{
+      color: #151515;
+      font-size: 30px;
+      font-weight: 500;
+      @media(max-width:1600px){
+        font-size: 28px;
+      }
+      @media(max-width:1200px){
+        font-size: 22px;
+      }
+      @media(max-width:991px){
+        font-size: 20px;
+      }
+    }
+    .container-box{
+      border-radius: 10px;
+      border: 1px solid #ECECEC;
+      background: #FFF;
+      transition: all 0.5s ease-in-out;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+       &:hover{
+        transition: all .5s;
+        transform : translateY(-10px);
+        box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.05);
+        .contact-action{
+          .enquiry{
+            background: #F5F5F5 !important;
+          }
+          .wp{
+            border-radius: 20px 0px 0px 20px;
+            border: 1px solid #ECECEC;
+            background: $orange;
+          }
+        }
+       }
+      .container-img{
+        padding: 10px;
+        img{
+          border-radius: 20px;
+          width: 100%;
+          height: 240px;
+          object-fit: cover;
+        }
+      }
+      .inner-box{
+        .container-heading{
+          background-color: #f5f5f5;
+          padding: 30px;
+          @media(max-width:1760px){
+            padding: 20px;
+          }
+          @media(max-width:1515px){
+            padding: 18px;
+          }
+          @media(max-width:1352px){
+            padding: 15px;
+          }
+          @media(max-width:1096px){
+            padding: 12px;
+          }
+          h3{
+            color: #151515;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500; 
+            margin-bottom: 0;
+            word-break: break-word;
+            @media(max-width:1671px){
+              font-size: 16px;
+            }
+            @media(max-width:1497px){
+              min-height: 38px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            @media(min-width:992px) and (max-width:1076px){
+              font-size: 14px;
+            }
+          }
+        }
+        .container-content{
+         background-color: #fff; 
+         padding: 20px 25px 5px 25px;
+         @media(max-width:1671px){
+          padding: 20px 20px 5px 20px;
+         }
+         @media(max-width:1352px){
+          padding: 20px 18px 5px 18px;
+         }
+         .container-spec{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+            .lighttxt, .boldtxt{
+              font-size: 18px;
+              font-weight: 500;
+              @media(max-width:1671px){
+                font-size: 16px;
+              }
+              @media(max-width:1352px){
+                font-size: 15px;
+              }
+            }
+            .lighttxt{
+              color: $grey;
+            }
+            .boldtxt{
+              color: $accentColor;
+            }
+         }
+         .container-info{
+          .c-info{
+            margin: 0px 0 30px 0;
+            height: 130px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            @media(max-width:1199px){
+              margin: 20px 0;
+            }
+            &::-webkit-scrollbar {
+              width: 7px;
+            }
+            &::-webkit-scrollbar-track {
+              background-color: #D9D9D9;
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background: $orange;
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+              background: $orange;
+            }
+            li{
+              position: relative;
+              margin-bottom: 15px;
+              &:after{
+                position: absolute;
+                content: '';
+                background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="5" fill="%23E9651B"/></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                left: 0;
+                top: 12px;
+                width: 15px;
+                height: 15px;
+                @media(max-width:1671px){
+                  width: 12px;
+                  height: 12px;
+                  top: 8px;
+                }
+              }
+              p, h1, h2, h3, h4, h5, span, div{
+                color: $grey;
+                font-size: 18px;
+                line-height: 35px;
+                font-weight: 400;
+                padding-left: 30px;
+                @media(max-width:1671px){
+                  font-size: 16px;
+                  padding-left: 20px;
+                  padding-right: 5px;
+                }
+                @media(max-width:1600px){
+                  font-size: 15px;
+                  line-height: 30px;
+                }
+                @media(max-width:1334px){
+                  padding-right: 2px;
+                }
+                @media(max-width:991px){
+                  font-size: 16px;
+                  line-height: 28px;
+                }
+                @media(max-width:767px){
+                  font-size: 15px;
+                  line-height: 24px;
+                }
+              }
+            }
+          }
+         }
+         .contact-action{
+          height: 60px;
+          border-radius: 20px;
+          border: 1px solid #ECECEC;
+          background: #F5F5F5;
+          display: flex;
+          justify-content: space-between;
+          transition: all 0.5s ease-in-out;
+          .enquiry{
+            border-radius: 0px 20px 20px 0px;
+            border: 1px solid #ECECEC;
+            background: #A6D493;
+          }
+          .wp,.enquiry {
+            width: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+              @media(max-width:1600px){
+                width: 25px;
+              }
+              @media(min-width:768px) and (max-width:900px){
+                width: 20px;
+              }
+              @media (min-width:576px) and (max-width:600px){
+                width: 18px;
+              }
+            }
+            a{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+        }
+          span{
+            color: #151515;
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 5px;
+            @media(max-width:1671px){
+              font-size: 16px;
+            }
+            @media(max-width:1352px){
+              font-size: 14px;
+            }
+            @media (min-width:576px) and (max-width:600px){
+              font-size: 14px;
+            }
+          }
+         }
+        }
+      }
+    }
+  }
+
+  
