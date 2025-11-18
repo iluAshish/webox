@@ -47,7 +47,7 @@
                         </li>
                         <li class="list-inline-item">/</li>
                         <li class="list-inline-item">
-                            <a href="{{url('services')}}" class="active text-decoration-none">Services</a>
+                            <a href="{{url('sizes')}}" class="active text-decoration-none">Sizes</a>
                         </li>
                     </ul>
                 </div>
@@ -62,7 +62,7 @@
             <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
                 <div class="right-content">
                     <p class="small-title">
-                        SERVICES
+                        SIZES
                     </p>
                     <h1 class="big-title">{!! @$service_details->title !!}</h1>
                     <div class="service-img">
@@ -91,11 +91,11 @@
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="service-bar">
                 <div class="services-listing-bar">
-                        <h2>Services</h2>
+                        <h2>Sizes</h2>
                         <ul class="list-inline arrow-list">
-                            @foreach($menu as $service_item)
+                            @foreach($sizes as $service_item)
                             <li>
-                                <a href="{{url('/')}}/service/{!! $service_item->short_url !!}" class="text-decoration-none">{!! $service_item->title !!}</a>
+                                <a href="{{url('/')}}/size/{!! $service_item->short_url !!}" class="text-decoration-none">{!! $service_item->title !!}</a>
                             </li>
                             @endforeach
                         </ul>
@@ -266,113 +266,6 @@
        
     </div>
 </section>
-
-
-<section class="faq pb-0">
-    <div class="container-ctn">
-         <h2>Frequently Asked Questions</h2>
-          <div class="accordion accordion-flush row" id="accordionFlushExample">
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingOne">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Can I Get Delivery for Used Shipping Containers in Houston, Texas?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">Yes, you can get direct delivery for used shipping containers in Houston, Texas. Webox Solutions is one of the top providers that offers delivery services for various container sizes. Also, we make sure timely delivery to meet both residential and commercial needs.</div>
-                            </div>
-                          </div>
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                               What Should You Check Before Buying Used Containers in Houston?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">
-                                  Before buying used containers in Houston, you want to inspect the container's condition, including any signs of rust, damage, or leaks. It is also important to verify the container's grade and make sure it fits with your business needs.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingThree">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                Which 40ft Shipping Container Types Are Best for Houston Buyers?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">
-                                    The best 40ft shipping container types for Houston buyers always depend on specific needs and purposes. A 40ft Standard or High Cube container is perfect for general storage, and a 40ft Open Top container is ideal for oversized cargo. 
-
-
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-    </div>
-    
-</section>
-
-<!-- service slider -->
-<section class="service-wrapper s-slider-wrapper">
-    <div class="container-ctn">
-        <div class="row align-items-end">
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-                <p class="small-title">
-                    OUR SERVICES
-                </p>
-                <h2 class="big-title">We Offer A Wide Variety Of Services</h2>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 d-flex justify-content-end">
-                <div class="primaryBtn" id="btnposition">
-                    <div id="slide"></div>
-                    <a href="#" class="text-decoration-none"> EXPLORE MORE</a>
-                </div>
-            </div>
-        </div>
-        <div class="service-slider">
-            @foreach($other_services as $other_service)
-
-            <div>
-                <a href="{{url('/')}}/service/{!! $other_service->short_url !!}">
-                    <div class="service-box">
-                        {{-- <img src="web/images/service-1.png" class="img-fluid" width="521" height="461" alt="service slider" /> --}}
-                        {!! Helper::printImage($other_service,'image','image_webp','image_attribute','img-fluid') !!}
-                        <div class="slider-content" >
-                            @if(@$other_service->title != '')
-                                <h3>{!! $other_service->title !!}</h3>
-                            @endif
-                            <div class="discription">
-                                @if(@$other_service->short_description != '')
-                                <p>{!! $other_service->short_description !!}</p>
-                                @endif
-                            </div>
-                            <div class="read-more">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                        <g clip-path="url(#clip0_13_136)">
-                                            <path
-                                                d="M23.75 0H6.25C2.80375 0 0 2.80375 0 6.25V23.75C0 27.1963 2.80375 30 6.25 30H23.75C27.1963 30 30 27.1963 30 23.75V6.25C30 2.80375 27.1963 0 23.75 0ZM20 16.25H16.25V20C16.25 20.6912 15.69 21.25 15 21.25C14.31 21.25 13.75 20.6912 13.75 20V16.25H10C9.31 16.25 8.75 15.6912 8.75 15C8.75 14.3088 9.31 13.75 10 13.75H13.75V10C13.75 9.30875 14.31 8.75 15 8.75C15.69 8.75 16.25 9.30875 16.25 10V13.75H20C20.69 13.75 21.25 14.3088 21.25 15C21.25 15.6912 20.69 16.25 20 16.25Z"
-                                                fill="#E9651B"
-                                            />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_13_136">
-                                                <rect width="30" height="30" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                                <span class="action-title">Read More</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-<!-- end of service slider -->
+@include('web.includes._faq', ['type' => 'size', 'id' => $service_details->id])
 
 @endsection

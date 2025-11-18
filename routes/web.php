@@ -17,6 +17,7 @@ use App\Http\Controllers\app\MediaController;
 use App\Http\Controllers\app\EnquiryController;
  use App\Http\Controllers\app\GroupCompaniesController;
 use App\Http\Controllers\app\DhabiProductController;
+use App\Http\Controllers\app\FaqController as AppFaqController;
 use App\Http\Controllers\app\SizeController;
 use App\Http\Controllers\web\HomeController as WebHome;
 use App\Models\SiteInformation;
@@ -85,6 +86,16 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('reset-password-store', [LoginController::class, 'reset_password_store']);
     Route::get('account/verify/{token}', [LoginController::class, 'verifyAccount'])->name('user.verify');
 
+    Route::group(['prefix' => 'faq'], function () {
+        Route::get('/', [AppFaqController::class,'faq']);
+        Route::get('create/', [AppFaqController::class,'faq_create']);
+        Route::post('create/', [AppFaqController::class,'faq_store']);
+        Route::get('edit/{id}', [AppFaqController::class,'faq_edit']);
+        Route::post('edit/{id}', [AppFaqController::class,'faq_update']);
+        Route::get('view/{id}', [AppFaqController::class,'faq_view']);
+        Route::post('delete/', [AppFaqController::class,'faq_delete']);
+        Route::post('popular',[AppFaqController::class, 'faq_popular']);
+    });
 
 
     Route::prefix('containers')->group(function () {

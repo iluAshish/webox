@@ -268,50 +268,7 @@
 </section>
 
 
-<section class="faq pb-0">
-    <div class="container-ctn">
-         <h2>Frequently Asked Questions</h2>
-          <div class="accordion accordion-flush row" id="accordionFlushExample">
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingOne">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Can I Get Delivery for Used Shipping Containers in Houston, Texas?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">Yes, you can get direct delivery for used shipping containers in Houston, Texas. Webox Solutions is one of the top providers that offers delivery services for various container sizes. Also, we make sure timely delivery to meet both residential and commercial needs.</div>
-                            </div>
-                          </div>
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                               What Should You Check Before Buying Used Containers in Houston?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">
-                                  Before buying used containers in Houston, you want to inspect the container's condition, including any signs of rust, damage, or leaks. It is also important to verify the container's grade and make sure it fits with your business needs.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item col-lg-6">
-                            <h3 class="accordion-header" id="flush-headingThree">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                Which 40ft Shipping Container Types Are Best for Houston Buyers?
-                              </button>
-                            </h3>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">
-                                    The best 40ft shipping container types for Houston buyers always depend on specific needs and purposes. A 40ft Standard or High Cube container is perfect for general storage, and a 40ft Open Top container is ideal for oversized cargo. 
-
-
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-    </div>
-    
-</section>
+@include('web.includes._faq', ['type' => 'service', 'id' => $service_details->id])
 
 <!-- service slider -->
 <section class="service-wrapper s-slider-wrapper">

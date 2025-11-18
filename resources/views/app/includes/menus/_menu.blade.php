@@ -167,6 +167,12 @@
         </li>
     </ul>
 </li>
+<li class="nav-item">
+  <a href="{{url(Helper::sitePrefix().'faq')}}" class="nav-link {{ (Request::segment(2)=='faq')?'active':'' }}">
+    <i class="fa fa-question-circle nav-icon"></i>
+    <p>Faq</p>
+  </a>
+</li>
 <li class="nav-item {{ (Request::segment(2)=='containers')?'menu-is-opening menu-open':'' }}">
     <a href="#" class="nav-link {{ (Request::segment(2)=='containers')?'active':'' }}">
         <i class="nav-icon fab fa-blogger-b"></i>
