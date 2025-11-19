@@ -170,6 +170,62 @@ class EnquiryController extends Controller
         }
     }
 
+    // here we have a size enquiry reply function
+    public function size_enquiry_list()
+    {
+        $title = "Enquiry List";
+        $enquiryList = Enquiry::where('enquiry_type','size-enquiry')->orderBy('id', 'desc')->get();
+        return view('app.enquiry.size_enquiry.list', compact('enquiryList', 'title'));
+    }
+
+    public function size_enquiry_view($id)
+    {
+        $title = "View Request";
+        $enquiry = Enquiry::find($id);
+        return view('app.enquiry.size_enquiry.view', compact('enquiry', 'title'));
+    }
+
+    public function delete_size_enquiry(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $contact = Enquiry::find($request->id);
+            if ($contact) {
+                $deleted = $contact->delete();
+                if ($deleted == true) {
+                    echo (json_encode(array('status' => true)));
+                } else {
+                    echo (json_encode(array('status' => false, 'message' => 'Some error occured,please try after sometime')));
+                }
+            } else {
+                echo (json_encode(array('status' => false, 'message' => 'Model class not found')));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+    public function delete_multi_size_enquiry(Request $request)
+    {
+        if (isset($request->id) && $request->id != null) {
+            $contactArray = explode(',', $request->id);
+            $successArray = array();
+            foreach ($contactArray as $con) {
+                $contact = Enquiry::find($con);
+                $deleted = $contact->delete();
+                if ($deleted == true) {
+                    $successArray[] = '1';
+                }
+            }
+            if ($successArray) {
+                echo (json_encode(array('status' => true)));
+            }
+        } else {
+            echo (json_encode(array('status' => false, 'message' => 'Empty value submitted')));
+        }
+    }
+
+    //end here size enquiry reply function
+
     public function reply_to_enquiry(Request $request)
     {
         if (isset($request->replay) && $request->replay != null) {

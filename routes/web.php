@@ -395,6 +395,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('delete', [EnquiryController::class, 'delete_product_enquiry']);
             Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_product_enquiry']);
         });
+
+        Route::prefix('size-enquiries')->group(function () {
+            Route::get('/', [EnquiryController::class, 'size_enquiry_list']);
+            Route::get('view/{id}', [EnquiryController::class, 'size_enquiry_view']);
+            Route::post('delete', [EnquiryController::class, 'delete_size_enquiry']);
+            Route::post('delete-multiple', [EnquiryController::class, 'delete_multi_size_enquiry']);
+        });
     });
 
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');

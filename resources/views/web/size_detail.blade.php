@@ -232,7 +232,8 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="quick-enq-wrapper">
-                                        <input type="hidden" name="service_id" value="{!! @$service_details->id !!}">
+                                        <input type="hidden" name="size_id" value="{!! @$service_details->id !!}">
+                                        <input type="hidden" name="enquiry_type" value="size-enquiry">
                                         <button href="#" class="quick-enq text-decoration-none">
                                             <div class="btn-icon">
                                                 <img src="{{ asset('web/images/icons/send.svg') }}" class="img-fluid" alt="button" />

@@ -577,6 +577,7 @@ class HomeController extends Controller
             $enquiry->type = $request->type ?? '';
             $enquiry->product_id = $request->product_id ?? null;
             $enquiry->service_id = $request->service_id;
+            $enquiry->size_id = $request->size_id ?? null;
             //$enquiry->sub_service_id = $request->sub_service;
             $enquiry->message = $request->message;
             $enquiry->request_url = url()->previous();

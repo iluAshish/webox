@@ -327,6 +327,12 @@
                 <p>Container Enquiry</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{url(Helper::sitePrefix().'enquiry/size-enquiries')}}" class="nav-link {{ (Request::segment(3)=='size-enquiries')?'active':'' }}">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Size Enquiry</p>
+            </a>
+        </li>
     </ul>
 </li>
 <li class="nav-item {{ (Request::segment(2)=='site-settings')?'menu-is-opening menu-open':'' }}">
