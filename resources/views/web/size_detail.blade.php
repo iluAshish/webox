@@ -95,7 +95,7 @@
                         <ul class="list-inline arrow-list">
                             @foreach($sizes as $service_item)
                             <li>
-                                <a href="{{url('/')}}/size/{!! $service_item->short_url !!}" class="text-decoration-none">{!! $service_item->title !!}</a>
+                                <a href="{{url('/')}}/sizes/{!! $service_item->short_url !!}" class="text-decoration-none">{!! $service_item->title !!}</a>
                             </li>
                             @endforeach
                         </ul>

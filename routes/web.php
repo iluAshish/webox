@@ -62,7 +62,7 @@ Route::get('testimonials', [WebHome::class, 'testimonials']);
 Route::post('testimonial-load-more', [WebHome::class, 'testimonialLoadMore']);
 
 Route::get('sizes', [WebHome::class, 'sizes']);
-Route::get('size/{short_url}', [WebHome::class, 'size_detail']); // detail page
+Route::get('sizes/{short_url}', [WebHome::class, 'size_detail']); // detail page
 
 Route::get('services', [WebHome::class, 'services']);
 Route::post('sub-services-load-more', [WebHome::class, 'subServiceLoadMore']);

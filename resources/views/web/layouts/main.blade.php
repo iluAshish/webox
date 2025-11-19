@@ -260,7 +260,7 @@
                                     </a>
                                     <ul>
                                         @foreach ($sizes as $size_item)
-                                        <li><a href="{{ url('/') }}/size/{!! $size_item->short_url !!}">{!! $size_item->title !!}</a></li>
+                                        <li><a href="{{ url('/') }}/sizes/{!! $size_item->short_url !!}">{!! $size_item->title !!}</a></li>
                                         @endforeach
 
                                     </ul>
@@ -338,7 +338,7 @@
                             </button>
                                     <ul  class="dropdown-menu" aria-labelledby="SizeMenu">
                                         @foreach ($menu as $service_item)
-                                        <li><a href="{{ url('/') }}/size/{!! $service_item->short_url !!}">{!! $service_item->title !!}</a></li>
+                                        <li><a href="{{ url('/') }}/sizes/{!! $service_item->short_url !!}">{!! $service_item->title !!}</a></li>
                                         @endforeach
 
                                     </ul>

@@ -68,7 +68,7 @@
             <div class="row">
                 @foreach ($sizes as $service)
                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                        <a href="{{ url('/') }}/size/{!! $service->short_url !!}">
+                        <a href="{{ url('/') }}/sizes/{!! $service->short_url !!}">
                             <div class="service-box">
                                 {{-- <img src="web/images/service-1.png" class="img-fluid" width="521" height="461" alt="service slider" /> --}}
                                 {!! Helper::printImage($service, 'image', 'image_webp', 'image_attribute', 'img-fluid') !!}
