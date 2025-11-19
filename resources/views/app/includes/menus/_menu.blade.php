@@ -169,7 +169,7 @@
 </li>
 <li class="nav-item">
   <a href="{{url(Helper::sitePrefix().'faq')}}" class="nav-link {{ (Request::segment(2)=='faq')?'active':'' }}">
-    <i class="fa fa-question-circle nav-icon"></i>
+    <i class="nav-icon fas fa-arrows-alt"></i>
     <p>Faq</p>
   </a>
 </li>

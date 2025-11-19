@@ -42,8 +42,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Sort Order</th>
-                                        <th>Popular</th>
+                                        <!-- <th>Sort Order</th>
+                                        <th>Popular</th> -->
                                         <th>Status</th>
                                         <th>Created Date</th>
                                         <th class="not-sortable">Actions</th>
@@ -55,17 +55,24 @@
                                         <td>{{ $loop->iteration }}</td>
                                         
                                         <td>{!! $faqList->faq_title !!}</td>
-                                        <td>
+                                        <!-- <td>
                                             <input type="text" name="sort_order" id="sort_order_{{$loop->iteration}}" data-extra="id"
                                                    data-extra_key="{{$faqList->id}}" data-table="Faq"
                                                    data-id="{{ $faqList->id }}" class="common_sort_order" style="width:25%"
                                                    value="{{$faqList->sort_order}}">
                                         </td>
-                                        <td><input id="switch-state-{{$i}}" type="checkbox" class="display_to_home" data-url="faq/popular" data-size="mini" title="Team" data-id="{{ $faqList->id}}" <?php if($faqList->popular=="Yes"){ ?>checked="checked"<?php }?>></td>
+                                        <td><input id="switch-state-{{$i}}" type="checkbox" class="display_to_home" data-url="faq/popular" data-size="mini" title="Team" data-id="{{ $faqList->id}}" <?php if($faqList->popular=="Yes"){ ?>checked="checked"<?php }?>></td> -->
 
-                                        <td><input id="switch-state" type="checkbox" class="status_check" data-size="mini"
-                                                   title="Faq" ref="{{ $faqList->id }}"
-                                                   @if($faqList->status == "Active") checked="checked" @endif></td>
+                                        <td>
+                                            <label class="switch">
+                                                <input id="switch-state" type="checkbox" class="status_check"
+                                                        data-size="mini" data-url="/status-change"
+                                                        data-table="Faq"
+                                                        data-field="status" data-pk="{{ $faqList->id }}"
+                                                    {{($faqList->status=="Active")?'checked':''}}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </td>
                                         <td>{{ date("d-M-Y", strtotime($faqList->created_at)) }}</td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
